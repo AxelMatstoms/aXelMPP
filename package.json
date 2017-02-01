@@ -1,0 +1,14 @@
+{
+    "name": "aXelMPP",
+    "version": "0.0.1",
+    "main": "main.js",
+    "devDependencies": {
+        "electron-packager": "^7.0.4",
+        "electron-prebuilt": "^1.2.3",
+        "electron-settings": "1.1.1",
+        "stanza.io": "^8.0.1"
+    },
+    "scripts": {
+        "start": "electron ."
+    }
+}

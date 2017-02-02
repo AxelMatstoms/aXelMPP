@@ -1,0 +1,78 @@
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.md-display1 {
+    font-size: 34px;
+    font-weight: 400;
+    color: $secondary-text-color;
+}
+
+.md-display2 {
+    font-size: 45px;
+    font-weight: 400;
+    color: $secondary-text-color;
+}
+
+.md-display3 {
+    font-size: 56px;
+    font-weight: 400;
+    color: $secondary-text-color;
+}
+
+.md-display4 {
+    font-size: 112px;
+    font-weight: 300;
+    color: $secondary-text-color;
+}
+
+
+.md-headline {
+    font-size: 24px;
+    font-weight: 400;
+    color: $primary-text-color;
+}
+
+.md-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: $primary-text-color;
+}
+
+.md-subheading {
+    font-size: 15px;
+    font-weight: 400;
+    color: $primary-text-color;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.md-body1 {
+    font-size: 13px;
+    font-weight: 400;
+    color: $primary-text-color;
+}
+
+.md-body2 {
+    font-size: 13px;
+    font-weight: 500;
+    color: $primary-text-color;
+}
+
+.md-subtitle {
+    @extend .md-body1;
+    color: $secondary-text-color;
+}
+
+.md-caption {
+    font-size: 12px;
+    font-weight: 400;
+    color: $secondary-text-color;
+}
+
+.md-code {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    font-weight: 400;
+    color: $primary-text-color;
+}

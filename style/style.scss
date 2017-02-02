@@ -1,11 +1,28 @@
 $primary-color: #009688;
 $primary-color-dark: #00796B;
 $accent-color: #F50057;
+$primary-text-color: rgba(0, 0, 0, 0.87);
+$secondary-text-color: rgba(0, 0, 0, 0.54);
+
+@import 'typography';
+@import 'shadows';
+@import 'icons';
 
 body,
 html {
     margin: 0;
     padding: 0;
+    background: #EEEEEE;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+.top-bars {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
 }
 
 .nav-bar {
@@ -27,35 +44,31 @@ html {
   outline: none;
 }
 
-/* Rules for sizing the icon. */
-.material-icons.md-18 {
-    font-size: 18px;
+.app-bar {
+    background-color: $primary-color;
+    margin: 0;
+    height: 64px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    @include card(1);
 }
 
-.material-icons.md-24 {
-    font-size: 24px;
+.app-bar-title {
+    @extend .md-title;
+    color: #FFF;
+    margin-left: 16px;
 }
 
-.material-icons.md-36 {
-    font-size: 36px;
+.side-nav {
+    background-color: #FFF;
+    width: 72px;
+    position: fixed;
+    top: 96px;
 }
 
-.material-icons.md-48 {
-    font-size: 48px;
-}
-/* Rules for using icons as black on a light background. */
-.material-icons.md-dark {
-    color: rgba(0, 0, 0, 0.54);
-}
-
-.material-icons.md-dark.md-inactive {
-    color: rgba(0, 0, 0, 0.26);
-}
-/* Rules for using icons as white on a dark background. */
-.material-icons.md-light {
-    color: rgba(255, 255, 255, 1);
-}
-
-.material-icons.md-light.md-inactive {
-    color: rgba(255, 255, 255, 0.3);
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

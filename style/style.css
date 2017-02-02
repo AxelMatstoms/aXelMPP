@@ -1,24 +1,94 @@
-body,
-html {
-  margin: 0;
-  padding: 0; }
+body {
+  font-family: "Roboto", sans-serif; }
 
-.nav-bar {
-  -webkit-app-region: drag;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  background-color: #00796B;
-  height: 32px; }
+.md-display1 {
+  font-size: 34px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.54); }
 
-.frame-button {
-  -webkit-app-region: no-drag;
-  border: none;
-  background-color: transparent; }
+.md-display2 {
+  font-size: 45px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.54); }
 
-.frame-button:focus {
-  outline: none; }
+.md-display3 {
+  font-size: 56px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.54); }
 
+.md-display4 {
+  font-size: 112px;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.54); }
+
+.md-headline {
+  font-size: 24px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.87); }
+
+.md-title, .app-bar-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.87); }
+
+.md-subheading {
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.87);
+  margin-top: 1em;
+  margin-bottom: 1em; }
+
+.md-body1, .md-subtitle {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.87); }
+
+.md-body2 {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.87); }
+
+.md-subtitle {
+  color: rgba(0, 0, 0, 0.54); }
+
+.md-caption {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.54); }
+
+.md-code {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.87); }
+
+/**
+ * Blatantly stolen from http://codepen.io/HugoGiraudel/pen/yyaGaP
+ */
+/**
+ * Computes a top-shadow for a card effect.
+ *
+ * @param {Number} $depth - depth level
+ *
+ * @return {List}
+ */
+/**
+ * Computes a bottom-shadow for a card effect.
+ *
+ * @param {Number} $depth - depth level
+ *
+ * @return {List}
+ */
+/**
+ * Gives a card depth effect.
+ *
+ * @param {Number} $depth - depth level (between 1 and 5)
+ *
+ * @link http://www.google.com/design/spec/layout/layout-principles.html#layout-principles-dimensionality Google Design
+ *
+ * @requires {function} top-shadow
+ * @requires {function} bottom-shadow
+ */
 /* Rules for sizing the icon. */
 .material-icons.md-18 {
   font-size: 18px; }
@@ -45,5 +115,59 @@ html {
 
 .material-icons.md-light.md-inactive {
   color: rgba(255, 255, 255, 0.3); }
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background: #EEEEEE; }
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0; }
+
+.top-bars {
+  position: fixed;
+  width: 100%;
+  z-index: 1; }
+
+.nav-bar {
+  -webkit-app-region: drag;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: #00796B;
+  height: 32px; }
+
+.frame-button {
+  -webkit-app-region: no-drag;
+  border: none;
+  background-color: transparent; }
+
+.frame-button:focus {
+  outline: none; }
+
+.app-bar {
+  background-color: #009688;
+  margin: 0;
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12); }
+
+.app-bar-title {
+  color: #FFF;
+  margin-left: 16px; }
+
+.side-nav {
+  background-color: #FFF;
+  width: 72px;
+  position: fixed;
+  top: 96px; }
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
 
 /*# sourceMappingURL=style.css.map */

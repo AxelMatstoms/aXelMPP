@@ -2,32 +2,45 @@
 <html>
 
 <head>
-    <title>aXelMPP</title>
-    <meta charset="utf-8">
+  <title>aXelMPP</title>
+  <meta charset="utf-8">
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,500" rel="stylesheet">
 
-    <link href="style/style.css" rel="stylesheet">
-    <script src="scripts/axelmpp.js"></script>
+  <link href="style/style.css" rel="stylesheet">
+  <script src="scripts/axelmpp.js"></script>
 </head>
 
 <body>
+  <div class="top-bars">
     <div class="nav-bar">
-        <button class="frame-button" id="minimize-button">
+      <button class="frame-button" id="minimize-button">
         <svg viewBox="0 0 24 24" width="24" height="24">
           <path d="M6 12 H18 Z" stroke-width="2px" stroke="#FFFFFF" />
         </svg>
       </button>
-        <button class="frame-button" id="maximize-button">
+      <button class="frame-button" id="maximize-button">
           <i class="material-icons md-light">fullscreen</i>
         </button>
-        <button class="frame-button" id="close-button">
+      <button class="frame-button" id="close-button">
           <i class="material-icons md-light">close</i>
         </button>
     </div>
-    <header class="app-header">
-        <h1>Memes</h1>
+    <header class="app-bar">
+      <h1 class="app-bar-title">aXelMPP</h1>
     </header>
+  </div>
+  <nav class="side-nav">
+    <div class="nav-item">
+      <i class="material-icons md-dark">message</i>
+      <p class="md-caption">Messages</p>
+    </div>
+    <div class="nav-item">
+      <i class="material-icons md-dark">people</i>
+      <p class="md-caption">Friends</p>
+    </div>
+  </nav>
 </body>
 
 </html>

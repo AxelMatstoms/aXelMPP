@@ -3,6 +3,8 @@ const remote = require('electron').remote;
 window.onload = () => {
     bindWindowButtons();
     bindSideNavListener();
+
+    onSideNav("messages");
 }
 
 function bindWindowButtons() {
@@ -35,16 +37,25 @@ function bindWindowButtons() {
 function bindSideNavListener() {
     let sideNav = id("sideNav");
     sideNav.addEventListener("click", (ev) => {
-        let target = ev.target;
-        let tID = target.id;
-        if(tID != "sideNav") {
-            cssSelectAll(`.nav-item:not(#${tID})`).forEach(el => {
-                el.classList.remove("nav-item--active")
-            });
-            target.classList.add("nav-item--active");
-            console.log(tID);
-        }
+        onSideNav(ev.target.id);
     });
+}
+
+function onSideNav(tID) {
+    let target = id(tID);
+    if(tID != "sideNav") {
+        cssSelectAll(`.nav-item:not(#${tID})`).forEach(el => {
+            el.classList.remove("nav-item--active")
+        });
+        target.classList.add("nav-item--active");
+        let tabID = `tab-${tID}`;
+        id(tabID).style.display = "block";
+        cssSelectAll(`.tab:not(#${tabID})`).forEach(el => {
+            el.style.display = "";
+        });
+        console.log(`#${tID} .nav-item__text`);
+        classSelect("app-bar-title")[0].innerHTML=cssSelect(`#${tID} .nav-item__text`).innerHTML;
+    }
 }
 
 function id(findID) {

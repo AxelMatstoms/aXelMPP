@@ -1,17 +1,21 @@
-$primary-color: #009688;
-$primary-color-dark: #00796B;
-$accent-color: #F50057;
+@import '../node_modules/sass-material-colors/sass/sass-material-colors';
+$primary-color: material-color("teal", "500");
+$primary-color-dark: material-color("teal", "700");
+$accent-color: material-color("pink", "a400");
 $primary-text-color: rgba(0, 0, 0, 0.87);
 $secondary-text-color: rgba(0, 0, 0, 0.54);
 @import 'typography';
 @import 'shadows';
 @import 'icons';
+@import 'components';
 
 body,
 html {
     margin: 0;
     padding: 0;
     background: #EEEEEE;
+    height: 100%;
+    overflow: hidden;
 }
 
 h1,
@@ -45,18 +49,22 @@ p {
     border: none;
     background-color: transparent;
     transition: background-color 0.1s;
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
 
-.frame-button:focus {
-    outline: none;
-}
+    &:focus {
+        outline: none;
+    }
 
-.frame-button:hover {
-    background-color: rgba(255, 255, 255, 0.14);
-}
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.14);
+    }
 
-.frame-button:active {
-    background-color: rgba(255, 255, 255, 0.26)
+    &:active {
+        background-color: rgba(255, 255, 255, 0.26);
+    }
 }
 
 .app-bar {
@@ -93,14 +101,14 @@ p {
     justify-content: center;
     height: 56px;
     transition: background-color 0.1s;
-}
 
-.nav-item:hover {
-    background-color: rgba(0, 0, 0, 0.14);
-}
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.14);
+    }
 
-.nav-item:active {
-    background-color: rgba(0, 0, 0, 0.26);
+    &:active {
+        background-color: rgba(0, 0, 0, 0.26);
+    }
 }
 
 .nav-item__text {
@@ -122,4 +130,78 @@ p {
 .nav-item--active .nav-item__text {
     font-size: 14px;
     color: $primary-color;
+}
+
+.main-content {
+    box-sizing: border-box;
+    padding-left: 72px;
+    padding-top: 88px;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.tab {
+    display: none;
+}
+
+.latest-messages-list-container {
+    display: flex;
+    justify-content: center;
+}
+
+.latest-messages-list {
+    @extend .md-card;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    transition: all 0.2s;
+}
+
+.message-latest {
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.14);
+    }
+}
+
+.message-latest__avatar {
+    background-color: $primary-color;
+    height: 48px;
+    width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.message-latest:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.26);
+}
+
+.message-latest__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 16px;
+    flex-grow: 1;
+
+    > .md-caption {
+        margin-top: 8px;
+    }
+}
+
+.message-latest__nametime {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+@media (min-width: 801px) {
+    .latest-messages-list {
+        margin: 64px;
+        max-width: 800px;
+    }
 }

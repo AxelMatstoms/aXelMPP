@@ -1,3 +1,13 @@
+/**
+ * Retrieves a color value from the $material-colors Sass map
+ * Inspired by https://github.com/nilskaspersson/Google-Material-UI-Color-Palette/
+ *
+ * @function
+ * @param {string} color-name             - quoted, lower-case, dasherized color
+ *                                          name (e.g. 'pink', 'amber')
+ * @param {string} [color-variant='500']  - quoted, lowercase color variant (e.g.
+ *                                          '200', 'a100')
+ */
 body {
   font-family: "Roboto", sans-serif; }
 
@@ -116,11 +126,19 @@ body {
 .material-icons.md-light.md-inactive {
   color: rgba(255, 255, 255, 0.3); }
 
+.md-card, .latest-messages-list {
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+  background-color: white;
+  margin: 16px;
+  border-radius: 2px; }
+
 body,
 html {
   margin: 0;
   padding: 0;
-  background: #EEEEEE; }
+  background: #EEEEEE;
+  height: 100%;
+  overflow: hidden; }
 
 h1,
 h2,
@@ -141,7 +159,7 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  background-color: #00796B;
+  background-color: #00796b;
   height: 32px; }
 
 .frame-button {
@@ -149,16 +167,17 @@ p {
   -webkit-user-select: none;
   border: none;
   background-color: transparent;
-  transition: background-color 0.1s; }
-
-.frame-button:focus {
-  outline: none; }
-
-.frame-button:hover {
-  background-color: rgba(255, 255, 255, 0.14); }
-
-.frame-button:active {
-  background-color: rgba(255, 255, 255, 0.26); }
+  transition: background-color 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px; }
+  .frame-button:focus {
+    outline: none; }
+  .frame-button:hover {
+    background-color: rgba(255, 255, 255, 0.14); }
+  .frame-button:active {
+    background-color: rgba(255, 255, 255, 0.26); }
 
 .app-bar {
   background-color: #009688;
@@ -191,12 +210,10 @@ p {
   justify-content: center;
   height: 56px;
   transition: background-color 0.1s; }
-
-.nav-item:hover {
-  background-color: rgba(0, 0, 0, 0.14); }
-
-.nav-item:active {
-  background-color: rgba(0, 0, 0, 0.26); }
+  .nav-item:hover {
+    background-color: rgba(0, 0, 0, 0.14); }
+  .nav-item:active {
+    background-color: rgba(0, 0, 0, 0.26); }
 
 .nav-item__text {
   transition: all 0.2s;
@@ -213,5 +230,64 @@ p {
 .nav-item--active .nav-item__text {
   font-size: 14px;
   color: #009688; }
+
+.main-content {
+  box-sizing: border-box;
+  padding-left: 72px;
+  padding-top: 88px;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto; }
+
+.tab {
+  display: none; }
+
+.latest-messages-list-container {
+  display: flex;
+  justify-content: center; }
+
+.latest-messages-list {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  transition: all 0.2s; }
+
+.message-latest {
+  display: flex;
+  flex-direction: row;
+  padding: 16px; }
+  .message-latest:hover {
+    background-color: rgba(0, 0, 0, 0.14); }
+
+.message-latest__avatar {
+  background-color: #009688;
+  height: 48px;
+  width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; }
+
+.message-latest:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.26); }
+
+.message-latest__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 16px;
+  flex-grow: 1; }
+  .message-latest__details > .md-caption, .message-latest__details > .nav-item__text {
+    margin-top: 8px; }
+
+.message-latest__nametime {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+@media (min-width: 801px) {
+  .latest-messages-list {
+    margin: 64px;
+    max-width: 800px; } }
 
 /*# sourceMappingURL=style.css.map */

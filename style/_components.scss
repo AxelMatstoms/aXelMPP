@@ -1,0 +1,6 @@
+.md-card {
+    @include card(1);
+    background-color: white;
+    margin: 16px;
+    border-radius: 2px;
+}

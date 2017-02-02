@@ -2,6 +2,7 @@ const remote = require('electron').remote;
 
 window.onload = () => {
     bindWindowButtons();
+    bindSideNavListener();
 }
 
 function bindWindowButtons() {
@@ -31,10 +32,29 @@ function bindWindowButtons() {
     });
 }
 
+function bindSideNavListener() {
+    let sideNav = id("sideNav");
+    sideNav.addEventListener("click", (ev) => {
+        let target = ev.target;
+        let tID = target.id;
+        if(tID != "sideNav") {
+            console.log(tID);
+        }
+    });
+}
+
 function id(findID) {
     return document.getElementById(findID);
 }
 
 function cssSelect(selector) {
     return document.querySelect(selector);
+}
+
+function cssSelectAll(selector) {
+    return document.querySelectAll(selector);
+}
+
+function classSelect(classname) {
+    return document.getElementsByClassName(classname);
 }

@@ -51,7 +51,7 @@ body {
 .md-subtitle {
   color: rgba(0, 0, 0, 0.54); }
 
-.md-caption {
+.md-caption, .nav-item__text {
   font-size: 12px;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.54); }
@@ -163,11 +163,29 @@ h1, h2, h3, h4, h5, h6, p {
   background-color: #FFF;
   width: 72px;
   position: fixed;
-  top: 96px; }
+  top: 96px;
+  height: 100%;
+  border-right: 1px solid rgba(0, 0, 0, 0.26); }
 
 .nav-item {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  justify-content: center;
+  height: 56px; }
+
+.nav-item__text {
+  transition: all 0.2s;
+  pointer-events: none; }
+
+.nav-item .material-icons {
+  pointer-events: none; }
+
+.nav-item--active .material-icons {
+  color: #009688; }
+
+.nav-item--active .nav-item__text {
+  font-size: 14px;
+  color: #009688; }
 
 /*# sourceMappingURL=style.css.map */

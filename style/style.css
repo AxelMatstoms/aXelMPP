@@ -26,7 +26,7 @@ body {
   font-weight: 400;
   color: rgba(0, 0, 0, 0.87); }
 
-.md-title, .app-bar-title {
+.md-title {
   font-size: 20px;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.87); }
@@ -140,30 +140,38 @@ h1, h2, h3, h4, h5, h6, p {
 
 .frame-button {
   -webkit-app-region: no-drag;
+  -webkit-user-select: none;
   border: none;
-  background-color: transparent; }
+  background-color: transparent;
+  transition: background-color 0.2s; }
 
 .frame-button:focus {
   outline: none; }
 
+.frame-button:hover {
+  background-color: rgba(0, 0, 0, 0.26); }
+
 .app-bar {
   background-color: #009688;
   margin: 0;
-  height: 64px;
+  height: 56px;
   display: flex;
   flex-direction: row;
   align-items: center;
   box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12); }
 
 .app-bar-title {
+  font-size: 16px;
+  font-weight: 500;
   color: #FFF;
-  margin-left: 16px; }
+  margin-left: 16px;
+  -webkit-user-select: none; }
 
 .side-nav {
   background-color: #FFF;
   width: 72px;
   position: fixed;
-  top: 96px;
+  top: 88px;
   height: 100%;
   border-right: 1px solid rgba(0, 0, 0, 0.26); }
 
@@ -176,10 +184,12 @@ h1, h2, h3, h4, h5, h6, p {
 
 .nav-item__text {
   transition: all 0.2s;
-  pointer-events: none; }
+  pointer-events: none;
+  -webkit-user-select: none; }
 
 .nav-item .material-icons {
-  pointer-events: none; }
+  pointer-events: none;
+  -webkit-user-select: none; }
 
 .nav-item--active .material-icons {
   color: #009688; }

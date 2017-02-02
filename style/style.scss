@@ -36,18 +36,24 @@ h1, h2, h3, h4, h5, h6, p {
 
 .frame-button {
     -webkit-app-region: no-drag;
+    -webkit-user-select: none;
     border: none;
     background-color: transparent;
+    transition: background-color 0.2s;
 }
 
 .frame-button:focus {
   outline: none;
 }
 
+.frame-button:hover {
+    background-color: rgba(0,0,0,0.26);
+}
+
 .app-bar {
     background-color: $primary-color;
     margin: 0;
-    height: 64px;
+    height: 56px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -55,16 +61,18 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .app-bar-title {
-    @extend .md-title;
+    font-size: 16px;
+    font-weight: 500;
     color: #FFF;
     margin-left: 16px;
+    -webkit-user-select: none;
 }
 
 .side-nav {
     background-color: #FFF;
     width: 72px;
     position: fixed;
-    top: 96px;
+    top: 88px;
     height: 100%;
     border-right: 1px solid rgba(0,0,0,0.26);
 }
@@ -81,10 +89,12 @@ h1, h2, h3, h4, h5, h6, p {
   @extend .md-caption;
   transition: all 0.2s;
   pointer-events: none;
+  -webkit-user-select: none;
 }
 
 .nav-item .material-icons {
   pointer-events: none;
+  -webkit-user-select: none;
 }
 
 .nav-item--active .material-icons {

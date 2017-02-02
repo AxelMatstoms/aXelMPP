@@ -38,6 +38,10 @@ function bindSideNavListener() {
         let target = ev.target;
         let tID = target.id;
         if(tID != "sideNav") {
+            cssSelectAll(`.nav-item:not(#${tID})`).forEach(el => {
+                el.classList.remove("nav-item--active")
+            });
+            target.classList.add("nav-item--active");
             console.log(tID);
         }
     });
@@ -48,11 +52,11 @@ function id(findID) {
 }
 
 function cssSelect(selector) {
-    return document.querySelect(selector);
+    return document.querySelector(selector);
 }
 
 function cssSelectAll(selector) {
-    return document.querySelectAll(selector);
+    return document.querySelectorAll(selector);
 }
 
 function classSelect(classname) {

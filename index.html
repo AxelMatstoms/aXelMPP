@@ -2,49 +2,63 @@
 <html>
 
 <head>
-  <title>aXelMPP</title>
-  <meta charset="utf-8">
+    <title>aXelMPP</title>
+    <meta charset="utf-8">
 
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,500" rel="stylesheet">
 
-  <link href="style/style.css" rel="stylesheet">
-  <script src="scripts/axelmpp.js"></script>
+    <link href="style/style.css" rel="stylesheet">
+    <script src="scripts/axelmpp.js"></script>
 </head>
 
 <body>
-  <div class="top-bars">
-    <div class="nav-bar">
-      <button class="frame-button" id="minimize-button">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <path d="M6 12 H18 Z" stroke-width="2px" stroke="#FFFFFF" />
-        </svg>
-      </button>
-      <button class="frame-button" id="maximize-button">
-          <i class="material-icons md-light">fullscreen</i>
-        </button>
-      <button class="frame-button" id="close-button">
-          <i class="material-icons md-light">close</i>
-        </button>
+    <div class="top-bars">
+        <div class="nav-bar">
+            <button class="frame-button" id="minimize-button">
+                <svg width="24" height="24">
+                    <use xlink:href="#ic-minimize" />
+                </svg>
+            </button>
+            <button class="frame-button" id="maximize-button">
+                <svg width="24" height="24">
+                    <use xlink:href="#ic-maximize" />
+                </svg>
+            </button>
+            <button class="frame-button" id="close-button">
+                <i class="material-icons md-light">close</i>
+            </button>
+        </div>
+        <header class="app-bar">
+            <h1 class="app-bar-title">aXelMPP</h1>
+        </header>
     </div>
-    <header class="app-bar">
-      <h1 class="app-bar-title">aXelMPP</h1>
-    </header>
-  </div>
-  <nav class="side-nav" id="sideNav">
-    <div class="nav-item" id="messages">
-      <i class="material-icons md-dark">message</i>
-      <p class="nav-item__text">Messages</p>
-    </div>
-    <div class="nav-item" id="friends">
-      <i class="material-icons md-dark">people</i>
-      <p class="nav-item__text">Friends</p>
-    </div>
-    <div class="nav-item" id="settings">
-      <i class="material-icons md-dark">settings</i>
-      <p class="nav-item__text">Settings</p>
-    </div>
-  </nav>
+    <nav class="side-nav" id="sideNav">
+        <div class="nav-item" id="messages">
+            <i class="material-icons md-dark">message</i>
+            <p class="nav-item__text">Messages</p>
+        </div>
+        <div class="nav-item" id="friends">
+            <i class="material-icons md-dark">people</i>
+            <p class="nav-item__text">Friends</p>
+        </div>
+        <div class="nav-item" id="settings">
+            <i class="material-icons md-dark">settings</i>
+            <p class="nav-item__text">Settings</p>
+        </div>
+    </nav>
+
+    <svg>
+        <symbol id="ic-maximize" viewBox="0 0 24 24">
+            <path d="M4,4 H20 V20 H4 Z" stroke="#FFF" stroke-width="2" stroke-linejoin="round" fill="none" />
+        </symbol>
+        <symbol id="ic-unmaximize" viewBox="0 0 24 24">
+            <path d="M4,6 V20 H18 M7,4 V17 H20 V4 Z" stroke="#FFF" stroke-width="2" stroke-linejoin="round" fill="none" />
+        </symbol>
+        <symbol id="ic-minimize" viewBox="0 0 24 24">
+            <path d="M6 12 H18 Z" stroke-width="2px" stroke="#FFFFFF" />
+        </symbol>
+    </svg>
 </body>
 
 </html>

@@ -17,13 +17,13 @@ function bindWindowButtons() {
     });
 
     maxBtn.addEventListener("click", (ev) => {
-      let mdIcon = maxBtn.firstElementChild;
+      let use = maxBtn.getElementsByTagName("use")[0];
         if (win.isMaximized()) {
             win.unmaximize();
-            mdIcon.innerHTML = "fullscreen";
+            use.setAttribute("xlink:href", "#ic-maximize")
         } else {
             win.maximize();
-            mdIcon.innerHTML = "fullscreen_exit"
+            use.setAttribute("xlink:href", "#ic-unmaximize")
         }
     });
 

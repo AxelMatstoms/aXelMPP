@@ -3,7 +3,6 @@ $primary-color-dark: #00796B;
 $accent-color: #F50057;
 $primary-text-color: rgba(0, 0, 0, 0.87);
 $secondary-text-color: rgba(0, 0, 0, 0.54);
-
 @import 'typography';
 @import 'shadows';
 @import 'icons';
@@ -15,7 +14,13 @@ html {
     background: #EEEEEE;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
     margin: 0;
 }
 
@@ -39,15 +44,19 @@ h1, h2, h3, h4, h5, h6, p {
     -webkit-user-select: none;
     border: none;
     background-color: transparent;
-    transition: background-color 0.2s;
+    transition: background-color 0.1s;
 }
 
 .frame-button:focus {
-  outline: none;
+    outline: none;
 }
 
 .frame-button:hover {
-    background-color: rgba(0,0,0,0.26);
+    background-color: rgba(255, 255, 255, 0.14);
+}
+
+.frame-button:active {
+    background-color: rgba(255, 255, 255, 0.26)
 }
 
 .app-bar {
@@ -74,7 +83,7 @@ h1, h2, h3, h4, h5, h6, p {
     position: fixed;
     top: 88px;
     height: 100%;
-    border-right: 1px solid rgba(0,0,0,0.26);
+    border-right: 1px solid rgba(0,0,0,0.14);
 }
 
 .nav-item {
@@ -83,25 +92,34 @@ h1, h2, h3, h4, h5, h6, p {
     align-items: center;
     justify-content: center;
     height: 56px;
+    transition: background-color 0.1s;
+}
+
+.nav-item:hover {
+    background-color: rgba(0, 0, 0, 0.14);
+}
+
+.nav-item:active {
+    background-color: rgba(0, 0, 0, 0.26);
 }
 
 .nav-item__text {
-  @extend .md-caption;
-  transition: all 0.2s;
-  pointer-events: none;
-  -webkit-user-select: none;
+    @extend .md-caption;
+    transition: all 0.2s;
+    pointer-events: none;
+    -webkit-user-select: none;
 }
 
 .nav-item .material-icons {
-  pointer-events: none;
-  -webkit-user-select: none;
+    pointer-events: none;
+    -webkit-user-select: none;
 }
 
 .nav-item--active .material-icons {
-  color: $primary-color;
+    color: $primary-color;
 }
 
 .nav-item--active .nav-item__text {
-  font-size: 14px;
-  color: $primary-color;
+    font-size: 14px;
+    color: $primary-color;
 }

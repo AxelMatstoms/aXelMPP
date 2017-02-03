@@ -3,6 +3,7 @@ const remote = require('electron').remote;
 window.onload = () => {
     bindWindowButtons();
     bindSideNavListener();
+    bindLatestMessagesListener();
 
     onSideNav("messages");
 }
@@ -41,6 +42,14 @@ function bindSideNavListener() {
     });
 }
 
+function bindLatestMessagesListener() {
+    cssSelectAll(".message-latest").forEach(el => {
+        el.addEventListener("click", ev => {
+            openTab("tab-chat");
+        });
+    });
+}
+
 function onSideNav(tID) {
     let target = id(tID);
     if(tID != "sideNav") {
@@ -49,13 +58,17 @@ function onSideNav(tID) {
         });
         target.classList.add("nav-item--active");
         let tabID = `tab-${tID}`;
-        id(tabID).style.display = "block";
-        cssSelectAll(`.tab:not(#${tabID})`).forEach(el => {
-            el.style.display = "";
-        });
+        openTab(tabID);
         console.log(`#${tID} .nav-item__text`);
         classSelect("app-bar-title")[0].innerHTML=cssSelect(`#${tID} .nav-item__text`).innerHTML;
     }
+}
+
+function openTab(tabID) {
+  id(tabID).style.display = "block";
+  cssSelectAll(`.tab:not(#${tabID})`).forEach(el => {
+      el.style.display = "";
+  });
 }
 
 function id(findID) {

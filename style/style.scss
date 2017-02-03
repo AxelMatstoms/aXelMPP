@@ -74,6 +74,7 @@ p {
     display: flex;
     flex-direction: row;
     align-items: center;
+    transition: all 0.2s;
     @include card(1);
 }
 
@@ -82,6 +83,7 @@ p {
     font-weight: 500;
     color: #FFF;
     margin-left: 16px;
+    transition: all 0.2s;
     -webkit-user-select: none;
 }
 
@@ -91,6 +93,7 @@ p {
     position: fixed;
     top: 88px;
     height: 100%;
+    transition: all 0.2s;
     border-right: 1px solid rgba(0,0,0,0.14);
 }
 
@@ -132,25 +135,26 @@ p {
     color: $primary-color;
 }
 
-.main-content {
+.tab-container {
     box-sizing: border-box;
     padding-left: 72px;
     padding-top: 88px;
     height: 100%;
     width: 100%;
     overflow-y: auto;
+    transition: all 0.2s;
 }
 
 .tab {
     display: none;
 }
 
-.latest-messages-list-container {
+.main-content-container {
     display: flex;
     justify-content: center;
 }
 
-.latest-messages-list {
+.main-content {
     @extend .md-card;
     display: flex;
     flex-direction: column;
@@ -199,9 +203,46 @@ p {
     flex-direction: row;
     justify-content: space-between;
 }
-@media (min-width: 801px) {
-    .latest-messages-list {
-        margin: 64px;
-        max-width: 800px;
+
+.chat-header {
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: all 0.2s;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.chat-person-name {
+    @extend .md-title;
+    margin-left: 16px;
+}
+
+
+@media (min-width: 1024px) {
+
+    .app-bar {
+        height: 64px;
+    }
+
+    .app-bar-title {
+        font-size: 20px;
+    }
+
+    .side-nav {
+        top: 96px;
+    }
+
+    .tab-container {
+        padding-top: 96px;
+    }
+
+    .main-content {
+        margin: 48px;
+        max-width: 1024px;
+    }
+
+    .chat-header {
+        padding: 24px;
     }
 }

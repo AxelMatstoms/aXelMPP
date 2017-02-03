@@ -132,6 +132,34 @@ body {
   margin: 16px;
   border-radius: 2px; }
 
+.md-textfield {
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  transition: all 0.1s; }
+  .md-textfield:focus {
+    outline: none;
+    border-bottom: 2px solid #f50057; }
+
+.md-button, .md-button--fab {
+  border: none; }
+  .md-button:focus, .md-button--fab:focus {
+    outline: none; }
+
+.md-button--fab {
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f50057;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.23), 0 3px 12px rgba(0, 0, 0, 0.16);
+  transition: all 0.2s; }
+  .md-button--fab:active {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
+    background-color: #ff2975; }
+
 body,
 html {
   margin: 0;
@@ -244,11 +272,16 @@ p {
   transition: all 0.2s; }
 
 .tab {
-  display: none; }
+  display: none;
+  height: 100%; }
 
 .main-content-container {
   display: flex;
-  justify-content: center; }
+  justify-content: space-between;
+  flex-direction: column; }
+
+.main-content-container--fh {
+  height: 100%; }
 
 .main-content {
   display: flex;
@@ -295,10 +328,49 @@ p {
   flex-direction: row;
   align-items: center;
   transition: all 0.2s;
-  border-bottom: 1px solid #EEEEEE; }
+  border-bottom: 1px solid #eeeeee; }
 
 .chat-person-name {
   margin-left: 16px; }
+
+.tab#tab-chat {
+  overflow-y: hidden; }
+
+.typing-area {
+  height: 64px;
+  margin-top: 32px;
+  background-color: #FFF;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 -1.5px 4px rgba(0, 0, 0, 0.24), 0 -1.5px 6px rgba(0, 0, 0, 0.12); }
+  .typing-area .md-textfield {
+    margin-left: 16px;
+    flex-grow: 1;
+    margin-right: 16px; }
+  .typing-area .md-button--fab {
+    margin-right: 16px;
+    margin-bottom: 64px; }
+
+.message-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; }
+
+.chat-message {
+  background-color: #eeeeee;
+  padding: 8px;
+  max-width: 60%;
+  margin: 8px;
+  border-radius: 16px;
+  display: inline-block; }
+  .chat-message:not(:only-child):not(:first-child) {
+    border-top-left-radius: 4px;
+    margin-top: 1px; }
+  .chat-message:not(:only-child):not(:last-child) {
+    border-bottom-left-radius: 4px;
+    margin-bottom: 1px; }
 
 @media (min-width: 1024px) {
   .app-bar {

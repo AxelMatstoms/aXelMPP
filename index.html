@@ -29,11 +29,11 @@
                 <i class="material-icons md-light">close</i>
             </button>
         </div>
-        <header class="app-bar">
+        <header class="app-bar" id="navBar" style="hidden">
             <h1 class="app-bar-title">aXelMPP</h1>
         </header>
     </div>
-    <nav class="side-nav" id="sideNav">
+    <nav class="side-nav hidden" id="sideNav">
         <div class="nav-item" id="messages">
             <i class="material-icons md-dark">message</i>
             <p class="nav-item__text">Messages</p>
@@ -48,7 +48,7 @@
         </div>
     </nav>
 
-    <div class="tab-container">
+    <div class="tab-container" id="tabContainer" style="padding-left: 0; padding-top: 32px;">
         <div class="tab" id="tab-messages">
             <div class="main-content-container--horizontal">
                 <div class="main-content">
@@ -130,33 +130,51 @@
                         </div>
                         <p class="chat-person-name">Donald Trump</p>
                     </div>
-                    <div class="conversation-area">
+                    <div class="conversation-area" id="conversationArea">
                         <div class="message-group received-message">
                             <div class="chat-message md-body1">
-                              Ayyyy m999
+                                Ayyyy m999
                             </div>
-                            <div class="chat-message md-body1">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor vulputate vulputate. Mauris vel blandit leo. Mauris eu pellentesque dui, in pulvinar erat. Nullam eget luctus nisi. Mauris eget condimentum diam. Ut maximus sed nisi nec dapibus. Aliquam at vulputate ipsum, vel feugiat eros. Aliquam vitae tempus lorem. Sed molestie.
+                            <div class="chat-message">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor vulputate vulputate. Mauris vel blandit leo. Mauris eu pellentesque dui, in pulvinar erat. Nullam eget luctus nisi. Mauris eget condimentum diam. Ut maximus sed nisi nec dapibus.
+                                Aliquam at vulputate ipsum, vel feugiat eros. Aliquam vitae tempus lorem. Sed molestie.
                             </div>
-                            <div class="chat-message md-body1">
-                              daaank riiiight?
+                            <div class="chat-message">
+                                daaank riiiight?
                             </div>
                         </div>
                         <div class="message-group sent-message">
-                            <div class="chat-message md-body1">
-                              Ayyyy is of dank m99
+                            <div class="chat-message">
+                                Ayyyy is of dank m99
                             </div>
-                            <div class="chat-message md-body1">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor vulputate vulputate. Mauris vel blandit leo. Mauris eu pellentesque dui, in pulvinar erat. Nullam eget luctus nisi. Mauris eget condimentum diam. Ut maximus sed nisi nec dapibus. Aliquam at vulputate ipsum, vel feugiat eros. Aliquam vitae tempus lorem. Sed molestie.
+                            <div class="chat-message">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor vulputate vulputate. Mauris vel blandit leo. Mauris eu pellentesque dui, in pulvinar erat. Nullam eget luctus nisi. Mauris eget condimentum diam. Ut maximus sed nisi nec dapibus.
+                                Aliquam at vulputate ipsum, vel feugiat eros. Aliquam vitae tempus lorem. Sed molestie.
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="typing-area">
-                    <input class="md-textfield" id="new_message_field">
+                    <input class="md-textfield" id="new_message_field" placeholder="Write new message...">
                     <button class="md-button--fab">
                         <i class="material-icons md-light">send</i>
                     </button>
+                </div>
+            </div>
+        </div>
+        <div class="tab" id="tab-login">
+            <div class="login-window-container">
+                <div class="login-window">
+                    <div class="login-header">
+                        <h1 class="md-title">Login</h1>
+                    </div>
+                    <div class="login-content">
+                        <input type="text" id="loginUsername" class="md-textfield" placeholder="Username">
+                        <input type="password" id="loginPassword" class="md-textfield" placeholder="Password">
+                        <div class="button-container">
+                            <button class="md-button--raised" id="loginButton">Login</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

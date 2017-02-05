@@ -8,15 +8,18 @@
 .md-textfield {
     border: none;
     border-bottom: 1px solid material-color("grey", "300");
-    transition: all 0.1s;
+    padding-bottom: 1px;
+    font-family: Roboto;
     &:focus {
         outline: none;
         border-bottom: 2px solid $accent-color;
+        padding-bottom: 0;
     }
 }
 
 .md-button {
     border: none;
+    text-transform: uppercase;
 
     &:focus {
         outline: none;
@@ -39,4 +42,16 @@
         @include card(3);
         background-color: saturate(lighten($accent-color, 10%), 25%);
     }
+}
+
+.md-button--raised {
+    @extend .md-button;
+    height: 36px;
+    border-radius: 2px;
+    padding: 0 16px;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: Roboto;
+    background-color: $accent-color;
+    color: #FFF;
 }

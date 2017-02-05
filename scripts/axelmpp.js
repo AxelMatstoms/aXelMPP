@@ -1,11 +1,16 @@
 const remote = require('electron').remote;
+const XMPP = require('stanza.io');
+
+var client;
 
 window.onload = () => {
     bindWindowButtons();
     bindSideNavListener();
     bindLatestMessagesListener();
+    bindLoginListener();
 
     onSideNav("messages");
+    openTab("tab-login");
 }
 
 function bindWindowButtons() {
@@ -50,6 +55,35 @@ function bindLatestMessagesListener() {
     });
 }
 
+function bindLoginListener() {
+    id("loginButton").addEventListener("click", (ev) => {
+        let username = id("loginUsername").value;
+        let password = id("loginPassword").value;
+        login(username, password);
+        openTab("tab-messages");
+    });
+}
+
+function login(username, password) {
+    client = XMPP.createClient({
+      "jid": `${username}@lserver.alite.am`,
+      "password": password,
+      "transport": "websocket",
+      "wsURL": "ws://lserver.alite.am:5280/websocket"
+    });
+
+    client.on("session:started", () => {
+        client.sendPresence();
+    })
+
+    client.on("chat", msg => {
+        console.log(msg);
+        putMessage(msg.body, false);
+    })
+
+    client.connect();
+}
+
 function onSideNav(tID) {
     let target = id(tID);
     if(tID != "sideNav") {
@@ -69,6 +103,37 @@ function openTab(tabID) {
   cssSelectAll(`.tab:not(#${tabID})`).forEach(el => {
       el.style.display = "";
   });
+
+  let tabContainer = id("tabContainer");
+
+  if(tabID == "tab-login") {
+      id("navBar").style.display = "none";
+      id("sideNav").classList.add("hidden")
+      tabContainer.style.paddingLeft = "0";
+      tabContainer.style.paddingTop = "32px";
+  } else {
+    id("navBar").style = "";
+    id("sideNav").classList.remove("hidden")
+    tabContainer.style = "";
+  }
+}
+
+function putMessage(message, sent) {
+    let cssClass = sent ? "sent-message" : "received-message";
+    let convArea = id("conversationArea");
+    let msgElement = document.createElement("div");
+    msgElement.className = "chat-message";
+    let textNode = document.createTextNode(message);
+    msgElement.appendChild(textNode);
+
+    if(convArea.lastElementChild.classList.contains(cssClass)) {
+        convArea.lastElementChild.appendChild(msgElement);
+    } else {
+        let msgGroup = document.createElement("div");
+        msgGroup.className = `message-group ${cssClass}`;
+        msgGroup.appendChild(msgElement);
+        convArea.appendChild(msgGroup);
+    }
 }
 
 function id(findID) {

@@ -361,7 +361,11 @@ p {
 
 .conversation-area {
   overflow-y: auto;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-grow: 1; }
 
 .message-group {
   display: flex;
@@ -394,6 +398,20 @@ p {
   margin: 8px;
   border-radius: 16px;
   display: inline-block; }
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+  width: 6px; }
+
+/* Track */
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.14); }
+
+::-webkit-scrollbar-thumb:active {
+  background-color: rgba(0, 0, 0, 0.26); }
 
 @media (min-width: 1024px) {
   .app-bar {
